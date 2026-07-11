@@ -276,52 +276,25 @@
     <div style="margin-top:28px;">
       <div class="section-label" style="margin-bottom:10px;">How it works</div>
       <ol class="delete-steps">
-        <li>Submit the deletion request form below with your registered email address.</li>
-        <li>You will receive a confirmation email at the address provided acknowledging your request.</li>
-        <li>Our team will verify ownership and process the deletion within <strong>7 business days</strong>.</li>
-        <li>A final confirmation email will be sent once all your data has been permanently removed.</li>
+        <li>Click the <strong>"Delete My Account Now"</strong> button below and follow the 2-step confirmation.</li>
+        <li>Enter your registered email address and tick the confirmation checkbox.</li>
+        <li>Your account and all data are <strong>deleted immediately</strong> — no waiting required.</li>
+        <li>You can also delete directly from the app: <strong>Settings → Delete Account</strong>.</li>
         <li>Active Premium subscriptions must be cancelled separately via Google Play Store settings before requesting deletion.</li>
       </ol>
     </div>
 
     <div class="delete-form-wrap">
-      <h3>🗑️ Account Deletion Request</h3>
-      <p>Fill in the form below. Your request will be sent directly to our data team at vizotechno@gmail.com and processed within 7 business days.</p>
+      <h3>🗑️ Delete Your Account Now</h3>
+      <p>Our secure deletion page removes your account and all data <strong>immediately</strong> — no waiting, no email back-and-forth.</p>
 
-      <form id="deleteForm" onsubmit="submitDeletion(event)">
-        <div class="form-group">
-          <label>Registered Email Address *</label>
-          <input type="email" id="delEmail" placeholder="Enter the email address used to sign in to Resumind" required />
-        </div>
-        <div class="form-group">
-          <label>Reason for Deletion (optional)</label>
-          <select id="delReason">
-            <option value="">Select a reason (optional)</option>
-            <option value="No longer using the app">No longer using the app</option>
-            <option value="Privacy concerns">Privacy concerns</option>
-            <option value="Switching to another service">Switching to another service</option>
-            <option value="Technical issues">Technical issues</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Additional Comments (optional)</label>
-          <textarea id="delComment" placeholder="Any additional information you'd like to share"></textarea>
-        </div>
-        <button type="submit" class="delete-btn">Submit Account Deletion Request</button>
-      </form>
+      <a href="https://cvbuilder.vizo-techno.com/delete-request.php" class="delete-btn" style="display:inline-block;text-align:center;text-decoration:none;margin-top:10px;padding:14px 28px;">
+        Delete My Account Now →
+      </a>
 
-      <div class="success-msg" id="successMsg">
-        ✅ <strong>Deletion request received.</strong><br/>
-        Your account and all associated data will be permanently deleted within <strong>7 business days</strong>.
-        A confirmation will be sent to the email address you provided.<br/><br/>
-        If you have an active Premium subscription, please cancel it in <strong>Google Play Store → Subscriptions</strong>.
-      </div>
-
-      <p class="form-note">
-        Prefer email? Send your request directly to
-        <a href="mailto:vizotechno@gmail.com?subject=Account%20Deletion%20Request%20%E2%80%94%20Resumind" style="color:#e57373;">vizotechno@gmail.com</a>
-        with subject line <em>"Account Deletion Request — Resumind"</em>.
+      <p class="form-note" style="margin-top:18px;">
+        You can also delete from inside the app: <strong>Settings → Delete Account</strong>.<br/>
+        Prefer email? Contact <a href="mailto:vizotechno@gmail.com?subject=Account%20Deletion%20Request%20%E2%80%94%20Resumind" style="color:#e57373;">vizotechno@gmail.com</a>
       </p>
     </div>
 
@@ -350,30 +323,7 @@
 </footer>
 
 <script>
-  function submitDeletion(e) {
-    e.preventDefault();
-    const email   = document.getElementById('delEmail').value.trim();
-    const reason  = document.getElementById('delReason').value || 'Not specified';
-    const comment = document.getElementById('delComment').value.trim() || 'None';
-
-    const subject = encodeURIComponent('Account Deletion Request — Resumind');
-    const body    = encodeURIComponent(
-      'ACCOUNT DELETION REQUEST\n' +
-      '========================\n\n' +
-      'Registered Email: ' + email + '\n' +
-      'Reason: ' + reason + '\n' +
-      'Additional Comments: ' + comment + '\n\n' +
-      'The user requests permanent deletion of their account and all associated data\n' +
-      'in accordance with GDPR Article 17 / CCPA rights.\n\n' +
-      'Please process within 7 business days and send confirmation to the email above.'
-    );
-
-    window.location.href = 'mailto:vizotechno@gmail.com?subject=' + subject + '&body=' + body;
-
-    document.getElementById('deleteForm').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-  }
-</script>
+  </script>
 
 </body>
 </html>
